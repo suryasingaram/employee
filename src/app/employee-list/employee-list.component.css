@@ -1,0 +1,39 @@
+button{
+    float: right;
+    padding: 10px;
+    margin-right: 40px;
+    margin-top: 10px;
+    background: #80808e;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+.employee-table{
+    float: left;
+    width: 95%;
+    margin: 0 2.5%;
+}
+
+.mat-table{
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+
+}
+.mat-header-row {
+
+    background-color: rgb(86, 61, 124); 
+    border-color: #dee2e6;
+}
+.mat-header-row .mat-header-cell{
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+}
+mat-row:nth-of-type(odd) {
+ 
+    background-color: #e9ecef;
+}
+mat-row:nth-of-type(odd) .mat-header-cell{
+    color: #fff;
+}

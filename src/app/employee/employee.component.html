@@ -1,0 +1,67 @@
+<div class="container-fluid banner-fixed">
+  <div class="row height-max">
+      <div class="container height-max">
+          <div class="row height-max">
+             
+              <div class="d-flex banner-flex">
+                   
+                  <form [formGroup]="formControl" (ngSubmit)="addEmployee()">
+                        <h3>Add Employee</h3>
+                      <mat-form-field class="example-full-width"> 
+                          <input type="text" placeholder="Employee Id" (keypress)="numberOnly($event)" aria-label="Number" matInput formControlName="employeeId" 
+                          >
+                      </mat-form-field>
+                      <label *ngIf="formControl.get('employeeId').invalid && formControl.get('employeeId').dirty" class = "error"> Employee Id is required. </label>
+                      
+                      <mat-form-field class="example-full-width">
+                          <input type="text" placeholder="Employee Name" aria-label="Number"  minlength="3"  matInput formControlName="employeeName" >
+                          
+                      </mat-form-field>
+                      <label *ngIf="formControl.get('employeeName').invalid && formControl.get('employeeName').dirty" class = "error"> Employee name is required. </label>
+                      
+                      <mat-form-field class="example-full-width">
+                          <input type="text" placeholder="Designation" aria-label="Number" minlength="3"  matInput formControlName="designation" 
+                             >
+                         
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width">
+                        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" formControlName="dob" placeholder="Date Of Birth">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>  
+                    <label *ngIf="formControl.get('dob').invalid && formControl.get('dob').dirty" class = "error"> DOB is required. </label>
+                    
+                    <mat-form-field class="example-full-width">
+                        <input type="text" placeholder="Phone No" aria-label="Number" (keypress)="numberOnly($event)" minlength="10" maxlength="10" matInput formControlName="phoneNo" 
+                           >
+                       
+                    </mat-form-field>
+                    <label *ngIf="formControl.get('phoneNo').invalid && formControl.get('phoneNo').dirty" class = "error"> Phone No is required. </label>
+                    
+                    <mat-form-field class="example-full-width">
+                        <input type="text" placeholder="Nationality" aria-label="Number" minlength="3" matInput formControlName="nationality" 
+                           >
+                       
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input type="text" placeholder="Address" aria-label="Number" minlength="3" matInput formControlName="address" 
+                           >
+                       
+                    </mat-form-field>
+                    <p *ngIf="validationError" style="color:red">Please enter all the required fields</p>
+                      <button mat-raised-button color="primary" class="search-button">Submit</button>
+                  </form>
+                 
+              </div>
+              
+          </div>
+      </div>
+
+  </div>
+
+</div>
+
+
+
+
+
